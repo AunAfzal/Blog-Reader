@@ -1,13 +1,615 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navbar {
+    background-color: #9b59b6; /* Purplish background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a,
+  .nav-links button {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #8e44ad; /* Darker shade of purple */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-links a:hover,
+  .nav-links button:hover {
+    background-color: #a569bd; /* Lighter shade of purple on hover */
+  }
+  
+  .user-name {
+    color: #fff;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .logout-button {
+    background-color: #e74c3c; /* Red for logout button */
+  }
+
+  
+  .about-us-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us-page p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  
+  .contact-us {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b1919;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .contact-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-us p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-us .copyright {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  
+
+  .home {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .home h1 {
+    font-size: 2rem;
+  }
+  
+  .search-bar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 1rem;
+    width: 300px;
+  }
+  
+  .search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-buttons {
+    margin-top: 2rem;
+  }
+  
+  .toggle-buttons button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #f18ab0; /* Pinkish color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-buttons button.active {
+    background-color: #9b59b6; /* Purplish color for active buttons */
+  }
+  
+
+  .blog {
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-author {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-overview {
+    font-size: 1.4rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  
+  .publish-blog {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .publish-blog h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* index.css */
+
+input,
+select {
+  width: 100%;
+  padding: 0.8rem; /* Increase the padding for a larger input/select */
+  font-size: 1rem;
+  border: 2px solid #e5e5e5; /* Increase the border width and use a lighter color */
+  border-radius: 8px; /* Increase the border radius for a more rounded look */
+  outline: none; /* Remove the default focus outline */
+  transition: border-color 0.3s ease; /* Add a transition for a smooth effect */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Apply different styles on focus to indicate focus state */
+input:focus,
+select:focus {
+  border-color: #007bff; /* Change the border color when focused */
+}
+
+  
+  /* Increase the height of the content textarea */
+  .form-group textarea {
+    width: 100%;
+    height: 200px; /* Adjust the height as desired */
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  
+  .form-group button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-group button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  /* Shared styles for both pages */
+/* Shared styles for both pages */
+.login-page,
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Changed from 'center' to 'flex-start' */
+  height: 100vh;
+  background-color: #f0e5ff;
+}
+
+/* Rest of the CSS remains unchanged */
+
+
+h1 {
+  font-size: 2.5rem;
+  color: #5e0087;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Add class for input fields */
+.input-field {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-button,
+.signup-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-button {
+  background-color: #5e0087;
+}
+
+.signup-button {
+  background-color: #5e0087;
+}
+
+.login-button:hover,
+.signup-button:hover {
+  background-color: #41005e;
+}
+
+  
+.blog-details-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.blog-details h1 {
+  font-size: 2.5rem;
+  color: #5e0087;
+  margin-bottom: 1rem;
+}
+
+.blog-details p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.like-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #5e0087;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: #41005e;
+}
+
+.like-counter {
+  font-size: 1.2rem;
+  color: #555;
+  margin-left: 10px;
+}
+
+.comments-section {
+  margin-top: 2rem;
+}
+
+.comments-section h2 {
+  font-size: 1.8rem;
+  color: #5e0087;
+  margin-bottom: 1rem;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.add-comment-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #5e0087;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-comment-button:hover {
+  background-color: #41005e;
+}
+
+.comment {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+
+.comment {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f0e5ff;
+  border-radius: 5px;
+}
+
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0e8ff; /* Light purple background color */
+}
+
+.not-found-container h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #8a2be2; /* Dark purple color for the heading */
+}
+
+.not-found-container p {
+  font-size: 1.5rem;
+  color: #6a0dad; /* Purple color for the text */
+}
+
+.sign {
+  display: inline-block;
+  color: rgb(6, 6, 6);
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-top: 5px; /* Add some spacing above the Link */
+  margin-bottom: 5px; /* Add some spacing below the Link */
+}
+
+
+.navbar span {
+  color: white;
+  font-family: 'Roboto', sans-serif; /* Use the imported font or any other font */
+  font-size: 16px; /* Adjust the font size as needed */
+  /* Add any other styles you want for the greeting span */
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+/* Add styles for filter dropdown */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px; /* Add margin to create space between the toggle buttons and the filter dropdown */
+}
+
+.filter-dropdown button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.filter-dropdown .options {
+  position: absolute;
+  top: 100%;
+  right: 0; /* Position the dropdown on the top right of the filter-dropdown container */
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter-dropdown .options label {
+  margin-bottom: 5px;
+}
+
+.filter-dropdown .options input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.filter-dropdown .options button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color:#9b59b6;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-btn {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.back-btn {
+  background-color: transparent;
+  color: rgb(13, 2, 29);
+  border: none;
+  cursor: pointer;
+}
+
+.profile-info {
+  margin-top: 1rem;
+  color: #1b1919;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: rgb(155, 31, 208);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px; 
+}
+
+
+.confirmation-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7e57c2;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+
+.confirmation-box p {
+  margin-bottom: 10px;
+}
+
+.confirmation-box input {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-btn,
+.cancel-btn {
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.confirmation-box .confirm-btn {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.confirmation-box .cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* Red color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b; /* Darker red color on hover */
 }
